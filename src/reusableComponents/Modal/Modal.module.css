@@ -1,0 +1,38 @@
+.modalMask{
+    background: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    opacity: 0.5;
+}
+
+
+.modalMask+div{
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    height: 200px;
+    width: 300px;
+    background-color: aliceblue;
+    z-index: 1;
+    border-radius: 15px 0px 15px 0px;
+    /* border: 3px solid rgb(48, 141, 222); */
+    background-color: whitesmoke;
+}
+.modalMask+div>h4{
+    margin: 3rem 2rem;
+    text-align: start;
+}
+.modalMask+div>h4{
+    margin: 3rem 2rem;
+    text-align: start;
+}
+.modalMask+div>button{
+    margin-right: 1.5rem;
+}

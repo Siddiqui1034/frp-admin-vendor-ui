@@ -1,0 +1,58 @@
+[
+    {
+        "lbl": "User ID",
+        "tag": "input",
+        "type": "text",
+        "name": "uid",
+        "isRequired": true,
+        "value": "",
+        "error": "",
+        "placeholder": "User id",
+        "criteria": ["REQUIRED"],
+        "lblColumns":12,
+        "errorMsgColumns":12,
+        "inputCtrlColumns": 12
+    },
+    {
+        "lbl": "Password",
+        "tag": "input",
+        "type": "password",
+        "name": "password",
+        "isRequired": true,
+        "value": "",
+        "error": "",
+        "placeholder": "Password",
+        "criteria": ["REQUIRED", "MIN5CHARS"],
+        "lblColumns":12,
+        "errorMsgColumns":12,
+        "inputCtrlColumns": 12
+    },
+    {
+        "lbl": "Contact No.",
+        "tag": "input",
+        "type": "number",
+        "name": "phone",
+        "isRequired": true,
+        "value": "",
+        "error": "",
+        "placeholder": "Contact No.",
+        "criteria": ["REQUIRED", "PHONE_NUMBER"],
+        "lblColumns":12,
+        "errorMsgColumns":12,
+        "inputCtrlColumns": 12
+    },
+    {
+        "lbl": "Address",
+        "tag": "textarea",
+        "name": "address",
+        "isRequired": true,
+        "value": "",
+        "error": "",
+        "placeholder": "Address",
+        "criteria": ["REQUIRED"],
+        "lblColumns":12,
+        "errorMsgColumns":12,
+        "inputCtrlColumns": 12
+    }
+
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "text": "Home",
+        "path": "home",
+        "id": "home"
+    },
+    {
+        "text": "Vendors",
+        "path": "vendors",
+        "id": "vendors"
+    },
+    {
+        "text": "Logout",
+        "path": "login",
+        "id": "logout"
+    }
+]

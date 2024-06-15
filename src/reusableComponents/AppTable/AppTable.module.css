@@ -1,0 +1,22 @@
+.appTable{
+    width: 100%;
+    border-bottom: 1px solid black;
+}
+
+.appRootDiv{
+    border: 1px solid gray;
+    margin: 1.5rem;
+    border-radius: 0.5rem;
+    padding: 0.3rem;
+}
+
+.appTable > thead > tr{
+    background-color: #8c8a8a;
+    color: aliceblue;
+    line-height: 40px;
+}
+
+.appTable > tbody > tr{
+    line-height: 2.5rem;
+    border-bottom: 1px solid rgb(162, 160, 160);
+} 

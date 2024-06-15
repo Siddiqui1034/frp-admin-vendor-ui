@@ -1,0 +1,50 @@
+.menu {
+    text-align: end;
+    line-height: 40px;
+    background: black;
+    /* display: flex; */
+    
+}
+
+.menu>a {
+    color: aliceblue;
+    text-decoration: none;
+    line-height: 1.8rem;
+    font-weight: 500;
+    font-size: 1.3rem;
+    align-items: center;
+    text-align: center;
+    margin-right: 2rem;
+    letter-spacing: 0.2rem;
+    transition: 0.3s ease-in-out;
+    border-bottom: 3px solid transparent;
+}
+
+.menu>a:hover {
+    color: rgb(48, 141, 222);
+}
+
+.mobileMenu{
+    background-color: rgb(6, 5, 8);
+    width: 6rem;
+    height: 7.5rem;
+    position: absolute;
+    transition: left 1s ease;
+}
+.mobileMenu>a{
+    /* background-color: white; */
+    display: block;
+    color: aliceblue; 
+    width: 100%;
+    font-size: .9rem;
+    margin: 0.7rem 0;
+    letter-spacing: 2px;
+    padding-left: 0.5rem;
+    text-decoration: none;
+}
+
+.mobileMenuBtn{
+    position: absolute;
+    right: 0;
+
+}

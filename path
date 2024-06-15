@@ -1,0 +1,17 @@
+/admin/home
+/admin/vendor
+
+
+
+/vendor/home
+/vendor/products
+/vendor/changepassword
+
+
+
+/ - app -page
+
+
+/home - app - home - page.tsx - export default
+
+/admin/home - app - admin - home - page.tsx - export default

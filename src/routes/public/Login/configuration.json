@@ -1,0 +1,45 @@
+[
+    {
+        "lbl": "Role",
+        "tag": "input",
+        "type": "radio",
+        "name": "role",
+        "isRequired": true,
+        "value": "",
+        "error": "",
+        "criteria": ["REQUIRED"],
+        "options": ["Admin", "Vendor"],
+        "values": ["admin", "vendor"],
+        "errorMsgColumns": 5,
+        "inputCtrlColumns": 4,
+        "lblColumns": 3        
+    },
+    {
+        "lbl": "User ID",
+        "tag": "input",
+        "type": "text",
+        "name": "uid",
+        "isRequired": true,
+        "value": "",
+        "error": "",
+        "placeholder": "User id",
+        "criteria": ["REQUIRED"],
+        "errorMsgColumns": 5,
+        "inputCtrlColumns": 4,
+        "lblColumns": 3
+    },
+    {
+        "lbl": "Password",
+        "tag": "input",
+        "type": "password",
+        "name": "password",
+        "isRequired": true,
+        "value": "",
+        "error": "",
+        "placeholder": "Password",
+        "criteria": ["REQUIRED", "MIN5CHARS"],
+        "errorMsgColumns": 5,
+        "inputCtrlColumns": 4,
+        "lblColumns": 3
+    }
+]

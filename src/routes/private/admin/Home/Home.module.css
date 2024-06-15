@@ -1,0 +1,15 @@
+.admHome{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-flow: wrap;
+    height: calc(100vh-220px);
+    font-size: 3rem;
+    font-weight: bold;
+    transition: 0.35 ease;
+}
+.admHome:hover{
+    transform: scale(1.1);
+    text-shadow: 0 0 25px black;
+    color: aliceblue;
+}

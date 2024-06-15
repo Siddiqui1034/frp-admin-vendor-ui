@@ -1,0 +1,21 @@
+.appToaster{
+    position: fixed;
+    top: 0;
+    right: 0;
+    /* padding: 10px; */
+    border-radius: 5px 0px 0px 5px;
+    line-height: 50px;
+    width: 250px;
+    background-color: aliceblue;
+    border: 1px solid black;
+}
+.button{
+    cursor: pointer;
+    position: absolute;
+    right: 15px;
+}
+
+.appToaster>div{
+    height: 5px;
+    border-radius: 5px 0px 0px 5px;
+}
