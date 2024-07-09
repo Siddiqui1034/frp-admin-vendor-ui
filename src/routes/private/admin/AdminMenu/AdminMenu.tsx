@@ -5,11 +5,13 @@ import styles from './AdminMenu.module.css'
 import { usePathname, useRouter } from 'next/navigation'
 import Modal from '@/reusableComponents/Modal'
 import { AppCookie } from '@/services/cookies'
+import { useAppContext } from '@/statemanagement/appContext'
 
 const AdminMenu = () => {
 
   const pathName = usePathname()
   const router = useRouter()
+  const {dispatch}:any = useAppContext()
   const [activeMenu, setActiveMenu] = useState(pathName?.split('/')?.pop() || "home"); //when refresh d page, it should highlight selected menuItem & when no root selected should be home
   const [isShowModal, setIsShowModal] = useState(false)
   const [isMobileView, setISMobileView] = useState()
@@ -43,7 +45,6 @@ const AdminMenu = () => {
     if (eve.target.id === 'logout') {
       eve.preventDefault(); // it'll prevent to go anyother pg like 404 not found instead i want whereever in page either adminMenu or vendorMenu it just show the popup at the same page without going another page
       setIsShowModal(true)
-      setActiveMenu(eve.target.id)
     }
     else {
       // alert(eve.target.id);
@@ -52,14 +53,20 @@ const AdminMenu = () => {
   }
 
   const modalActions = (action: string) => {
-    if (action === 'C') {      
-      setIsShowModal(false) //show modal
-    }
-    else {
-      setIsShowModal(false) //hide modal and go to Login page as fresh start and clear all cookies 
+    setIsShowModal(false) //hide modal and go to Login page as fresh start and clear all cookies 
+
+    if (action === 'O') {
+      dispatch({
+        type: "LOGIN",
+        payload: {
+          isLoggedIn: false,
+          role: '',
+          uid: ''
+        }
+      })
       AppCookie.clear();
       router.push('/')
-    }
+    }      
   }
 
   const handleMobileBtnMenu = () => {

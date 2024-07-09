@@ -6,9 +6,7 @@ import Login from "@/routes/public/Login";
 import { useAppContext } from "@/statemanagement/appContext";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
-import { AppCookie } from "@/services/cookies";
-
-
+import { AppCookie } from "@/services/cookies"; 
 
 export default function Page() {
 

@@ -11,7 +11,7 @@ const ChangePassword = () => {
 
     const [formControls, setFormControls] = useState(config);
   
-    const handleClick = async () => {
+    const handleChangePwd = async () => {
       try {
         const [isFormValid, dataObj] = formValidation(formControls, setFormControls)
         if (!isFormValid) return;
@@ -30,14 +30,14 @@ const ChangePassword = () => {
 
     
     return (
-        <div>
+        <div className='container-fluid '>
             <h3 className='text-center my-5'>Change Password</h3>
             {
                 formControls.map((obj, index) => {
                     return <Input key={`input_${index}`} {...obj} handleChange={handleChange} />
                 })
             }
-            <Button text="Change Password" handleClick={handleClick} bgColor="white" />
+            <Button align="text-center" text="Change Password" handleClick={handleChangePwd} bgColor="black" color="white" />
 
         </div>
     )

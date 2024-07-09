@@ -11,8 +11,8 @@
     },
     {
         "text": "Change Password",
-        "path": "change-password",
-        "id": "change-password"
+        "path": "changepassword",
+        "id": "changepassword"
     },
     {
         "text": "Logout",

@@ -5,7 +5,9 @@ import { gql } from '@apollo/client';
 // YOUE__QUERRY send by server side developer
 
 export const LOGIN_GQL = gql`  
-query Query($data: UserInput) {
-    login(data: $data)
-  }
+
+
+  query Query($data: loginInput) {
+  login(data: $data)
+}
 `;

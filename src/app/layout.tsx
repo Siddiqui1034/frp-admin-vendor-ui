@@ -11,14 +11,23 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header/Header";
 import { AppCookie } from "@/services/cookies";
 import {ApolloClient,InMemoryCache, ApolloProvider}from '@apollo/client'
+// import { createUploadLink } from "apollo-upload-client";
+// import { useDropzone } from "react-dropzone";
 import AdminMenu from "@/routes/private/admin/AdminMenu/AdminMenu";
 import VendorMenu from "@/routes/private/vendor/VendorMenu/VendorMenu";
 import { useRouter } from "next/navigation";
 import Loader from "@/reusableComponents/Loader";
 import { Toaster } from "@/reusableComponents/Toaster";
 
+import createUploadLink from "apollo-upload-client/createUploadLink.mjs";
+
+//  const link = createUploadLink({uri : 'http://localhost:4000'})
+
 const client = new ApolloClient({
-  uri: 'http://localhost:5000/',
+  link: createUploadLink({
+    uri: 'http://localhost:4000/graphql',
+  }),
+  // link,
   cache: new InMemoryCache(),
 });
 
@@ -80,6 +89,7 @@ export default function RootLayout({
         <title>Admin-Vendor App</title>
       </head>
       <body >
+        
 {/* <AppContextProvider myData={{ state, dispatch }}> {/*by making state and dispatch in one object we can write like below instead of passing state and dispatch separatly*/} 
         <AppContextProvider myData={obj}>
   
@@ -87,8 +97,10 @@ export default function RootLayout({
             <Header />
            {state?.isLoggedIn && state?.role==="admin" && <AdminMenu />}
            {state?.isLoggedIn && state?.role==="vendor" && <VendorMenu />}
-            
+            <div className="mb-5">
             {children}
+            </div>
+          
             <Footer />
 
            {state?.isShowLoader && <Loader />} 

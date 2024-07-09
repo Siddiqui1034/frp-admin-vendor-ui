@@ -3,7 +3,7 @@
     justify-content: center;
     align-content: center;
     flex-flow: wrap;
-    height: calc(100vh-220px);
+    height: calc(100vh - 200px);
     font-size: 3rem;
     font-weight: bold;
     transition: 0.35 ease;

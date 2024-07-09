@@ -9,9 +9,9 @@
         "value": "",
         "error": "",
         "criteria": ["REQUIRED", "MIN5CHARS"],
-        "errorMsgColumns": 5,
+        "errorMsgColumns": 4,
         "inputCtrlColumns": 4,
-        "lblColumns": 3        
+        "lblColumns": 4        
     },
     {
         "lbl": "New Password",
@@ -24,9 +24,9 @@
         "placeholder": "New Password",
         "criteria": ["REQUIRED", "MIN5CHARS", "COMPARE"],
         "compare": ["newPassword", "confirmPassword"],
-        "errorMsgColumns": 5,
+        "errorMsgColumns": 4,
         "inputCtrlColumns": 4,
-        "lblColumns": 3
+        "lblColumns": 4
     },
     {
         "lbl": "Confirm Password",
@@ -39,8 +39,8 @@
         "placeholder": "Confirm Password",
         "criteria": ["REQUIRED", "MIN5CHARS", "COMPARE" ],
         "compare": ["newPassword", "confirmPassword"],
-        "errorMsgColumns": 5,
+        "errorMsgColumns": 4,
         "inputCtrlColumns": 4,
-        "lblColumns": 3
+        "lblColumns": 4
     }
 ]

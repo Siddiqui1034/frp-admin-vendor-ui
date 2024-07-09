@@ -10,15 +10,20 @@
   },
   "dependencies": {
     "@apollo/client": "^3.10.4",
+    "@apollo/react-hooks": "^4.0.0",
+    "apollo-upload-client": "^18.0.1",
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.3",
     "graphql": "^16.8.1",
+    "graphql-tag": "^2.12.6",
     "next": "14.2.3",
     "react": "^18",
     "react-bootstrap-icons": "^1.11.4",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "react-dropzone": "^14.2.3"
   },
   "devDependencies": {
+    "@types/apollo-upload-client": "^18.0.0",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",

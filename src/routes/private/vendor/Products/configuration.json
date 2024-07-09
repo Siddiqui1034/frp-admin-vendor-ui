@@ -1,0 +1,43 @@
+[
+    {
+        "lbl": "Product Name",
+        "tag": "input",
+        "type": "text",
+        "name": "name",
+        "isRequired": true,
+        "value": "",
+        "error": "",
+        "placeholder": "Enter Product Name",
+        "criteria": ["REQUIRED"],
+        "errorMsgColumns": 12,
+        "inputCtrlColumns": 12,
+        "lblColumns": 12      
+    },
+    {
+        "lbl": "Cost",
+        "tag": "input",
+        "type": "number",
+        "name": "cost",
+        "isRequired": true,
+        "value": "",
+        "error": "",
+        "placeholder": "Product Cost",
+        "criteria": ["REQUIRED"],
+        "errorMsgColumns": 12,
+        "inputCtrlColumns": 12,
+        "lblColumns": 12
+    },
+    {
+        "lbl": "Image",
+        "tag": "input",
+        "type": "file",
+        "name": "path",
+        "isRequired": true,
+        "value": "",
+        "error": "",
+        "criteria": ["REQUIRED", "SIZE", "TYPE"],
+        "errorMsgColumns": 12,
+        "inputCtrlColumns": 12,
+        "lblColumns": 12
+    }
+]
