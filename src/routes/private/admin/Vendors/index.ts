@@ -1,2 +1,2 @@
-import {Vendors} from './Vendors'
+import { Vendors } from './Vendors'
 export default Vendors;

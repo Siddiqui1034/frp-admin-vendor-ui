@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'next/image'
 
 type propsType = {
     lbl: String,
@@ -14,17 +15,20 @@ type propsType = {
     lblColumns?: any,
     errorMsgColumns?: any,
     inputCtrlColumns?: any
-    value: string
+    value?: string,
+    src?: any,
+    
 }
 
-const Input = ({value, lbl, isRequired, type, name, placeholder, handleChange, error, options, values, lblColumns, errorMsgColumns, inputCtrlColumns}: propsType)=> {
+const Input = ({  value, src, lbl, isRequired, type, name, placeholder, handleChange, error, options, values, lblColumns, errorMsgColumns, inputCtrlColumns}: propsType)=> {
  
   const fnPrepareInputControls= () => {
   switch(type){
     case "text":
     case "password":
     case "number":
-      return <input value={value} className='form-control' onChange={handleChange} type={type} name={name} placeholder={placeholder}  />
+      return <input  value={value} className='form-control' onChange={handleChange} type={type} name={name} placeholder={placeholder}  />
+    
     case "radio" :
     return <>
     {
@@ -35,8 +39,15 @@ const Input = ({value, lbl, isRequired, type, name, placeholder, handleChange, e
                 </React.Fragment>
       })
     }
-    </>  
-    case "dropdown":
+    </> 
+    case "file":
+    return <>
+    <input className='form-control' onChange={handleChange} type={type} name={name} placeholder={placeholder} /> 
+    <p>
+      <Image className='mt-3' src={ `${ src ? src : "/defaultImage.png"}`} width={100} height={100} alt='defaultImage'/>
+    </p>
+    </> 
+    case "dropdown": 
       return <div></div>
     default :
     return <div></div>

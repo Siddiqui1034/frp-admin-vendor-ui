@@ -1,11 +1,2 @@
-import React from 'react'
-
-const Products = () => {
-  return (
-    <div>
-      
-    </div>
-  )
-}
-
-export default Products
+import Products from "@/routes/private/vendor/Products";
+export default Products;

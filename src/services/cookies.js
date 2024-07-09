@@ -20,8 +20,9 @@ export class AppCookie {
      }
      
 
-    static async setCookie(name, value, days) { // here 'name'in set cookie we use cookieStore.set({ name: "loc", value: "mumbai"}) not 'key' 'value' it is 'name' and 'value'
-        const cookieObj = { name, value }
+    static async setCookie(name, value,  days) { // here 'name'in set cookie we use cookieStore.set({ name: "loc", value: "mumbai"}) not 'key' 'value' it is 'name' and 'value'
+        const cookieObj = { name, value, }
+        console.log(value)
         if (days) {
             cookieObj.expires = AppCookie.getDate(days)
         }

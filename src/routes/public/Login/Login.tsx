@@ -13,8 +13,7 @@ import Loader from '@/reusableComponents/Loader/Loader';
 const Login = () => {
 
   const [formControls, setFormControls] = useState(config)
-  // const [showLoader, setShowLoader] = useState(false)
-  const { dispatch }: any = useAppContext()
+  const { dispatch }: any = useAppContext()  
   const [fnLogin] = useLazyQuery(LOGIN_GQL)
 
   const handleClick = async () => {
@@ -33,10 +32,11 @@ const Login = () => {
 
       const { login } = res?.data
       if (login) {
-        const { role, token, uid } = login;
-        AppCookie.setCookie("token", token)
+        const { role, token, uid, _id } = login;
+        AppCookie.setCookie("token", token) 
         AppCookie.setCookie("role", role)
         AppCookie.setCookie("uid", uid)
+        AppCookie.setCookie("id",_id)
         dispatch({
           type: "LOGIN",
           payload: {
@@ -80,7 +80,7 @@ const Login = () => {
           return <Input key={`input_${index}`} {...obj} handleChange={handleChange} />
         })
       }
-      <Button text="Login" handleClick={handleClick} bgColor="white" />
+      <Button align="text-center" text="Login" handleClick={handleClick} bgColor="white" />
     </div>
   )
 }

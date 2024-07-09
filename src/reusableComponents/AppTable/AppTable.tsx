@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Pagination from '../Pagination/Pagination'
 import styles from './AppTable.module.css'
 import { log } from 'console'
+import Image from 'next/image'
 
 type TableProps = {
   headings: string[],
@@ -11,12 +12,15 @@ type TableProps = {
   isShowDelete?: boolean,
   handleEdit: (data: any) => void,
   handleDelete: (data: any) => void
+  hasImage?:boolean,
+  imageHeader?:any,
+  imageColumn?: any
 
 }
 
 const AppTable = (props: TableProps) => {
 
-  const { headings, data, columns, isShowDelete, isShowEdit, handleDelete, handleEdit } = props
+  const {hasImage, imageHeader, imageColumn, headings, data, columns, isShowDelete, isShowEdit, handleDelete, handleEdit } = props
   const [pageNo, setPageNo] = useState(1)
   const [currentData, setCurrentData] = useState([])
   const perPage = 5
@@ -28,7 +32,7 @@ const AppTable = (props: TableProps) => {
     const end = pageNo * perPage
     const start = end - perPage;
     setCurrentData(data?.slice(start, end) || [] )
-  }, [pageNo])
+  }, [pageNo, data])
 
   return (
     <div className={`table-responsive ${styles.appRootDiv}`}>
@@ -36,6 +40,11 @@ const AppTable = (props: TableProps) => {
       <table className={styles.appTable}>
         <thead>
           <tr>
+            {
+              hasImage && imageHeader.map( (image:any, index:number) =>{
+                return <th key={`th_${index}`}>{image}</th>
+              })
+            }
             {
               headings.map((value, index) => {
                 return <th key={`th_${index}`}>{value}</th>
@@ -46,18 +55,27 @@ const AppTable = (props: TableProps) => {
           </tr>
         </thead>
         <tbody>
-          {
-            currentData?.map((object:any, index) => {
+          { 
+          currentData.length > 0 
+            ?
+            currentData?.map((obj:any, index) => {
               return <tr key={`tr_${index}`}>
                 {
-                  columns.map((key: any, ind) => {
-                    return <td key={`td_${ind}`}> {object[key]} </td>
+                  hasImage && imageColumn.map( (key:any, ind:any) =>{
+                    return <td key={`td_${ind}`}><Image alt='image' width={100} height={100} src={`http://localhost:4000/${obj[key]}?${new Date().getTime()}`}/></td>
                   })
                 }
-                {isShowEdit && <td><i onClick={() => handleEdit(object)} className='bi bi-pencil-fill'></i></td>}
-                {isShowDelete && <td><i onClick={() => handleDelete(object)} className='bi bi-trash-fill'></i></td>}
+                {
+                  columns.map((key: any, ind) => {
+                    return <td key={`td_${ind}`}> {obj[key]} </td>
+                  })
+                }
+                {isShowEdit && <td><i onClick={() => handleEdit(obj)} className='bi bi-pencil-fill'></i></td>}
+                {isShowDelete && <td><i onClick={() => handleDelete(obj)} className='bi bi-trash-fill'></i></td>}
               </tr>
             })
+            :
+            <tr><td colSpan={columns.length+2} className='text-center'> No Record Found </td></tr>
           }
         </tbody>
       </table>

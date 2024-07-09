@@ -40,6 +40,7 @@ export const Toaster = () => {
 
     const fnClear = () =>{
         clearInterval(intervalref.current)
+        setCount(0)
         dispatch({
             type: "TOASTER",
             payload: {
@@ -50,8 +51,6 @@ export const Toaster = () => {
 
         })
     }
-
-
 
   return (
     <div  className={`${styles.appToaster}`}>
